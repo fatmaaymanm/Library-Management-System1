@@ -21,5 +21,17 @@ public abstract class Person {
         Email = email;
         this.isBlocked = isBlocked;
     }
+
+    public void registration() {
+
+    }
+
+    public void login() {
+
+    }
+
+    public void logout() {
+
+    }
 }
 
