@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public abstract class Person {
     public int ID;
     public String firstName;
@@ -22,16 +24,62 @@ public abstract class Person {
         this.isBlocked = isBlocked;
     }
 
-    public void registration() {
+    public static void registration() {
 
     }
 
-    public void login() {
-
+    public static void login() {
+        mainMenu();
     }
 
-    public void logout() {
+    public static void logout() {
+        clearScreen();
+        startMenu();
+    }
 
+    public static void clearScreen() {
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
+    }
+
+    public static void startMenu() {
+        System.out.println("Library Management System");
+        System.out.println("Enter 1, 2 or 3");
+        System.out.println("1. Login");
+        System.out.println("2. Register");
+        System.out.println("3. Exit");
+
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1 -> Person.login();
+            case 2 -> Person.registration();
+            case 3 -> System.exit(0);
+            default -> {
+                System.out.println("Error!");
+                startMenu();
+            }
+        }
+    }
+
+    public static void mainMenu() {
+        System.out.println("Library Management System");
+        System.out.println("Enter 1, 2 or 3");
+        System.out.println("1. Logout");
+        System.out.println("2. Register");
+
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1 -> Person.logout();
+            case 2 -> Person.registration();
+            default -> {
+                System.out.println("Error!");
+                mainMenu();
+            }
+        }
     }
 }
 
