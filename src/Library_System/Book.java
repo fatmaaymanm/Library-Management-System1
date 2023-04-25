@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Book{
     String Name;
-    int Quantity = 0;
+    static int Quantity = 0;
     List<Readers> ReaderNames=new ArrayList<Readers>();
     public Book(String x){
         this.Name=x;
