@@ -2,40 +2,36 @@ package Library_System;
 import java.lang.*;
 import java.util.*;
 public class Library {
-    static List<Book> Books=new ArrayList<Book>();
-    static List<Readers> libReaders=new ArrayList<Readers>();
-    List<String> RentedBooks=new ArrayList<String>();
+    public static List<Book> Books=new ArrayList<Book>();
+    public static List<Readers> libReaders=new ArrayList<Readers>();
+    public static List<String> RentedBooks=new ArrayList<String>();
     public Library(){
     }
-    boolean Search(String Key){
+    public boolean Search(String Key){
         for (Book book : Books) {
             if (book.Name.equals(Key)) {
                 if (book.Quantity > 0) {
-                    System.out.println("Book Found");
                     return true;
-                } else {
-                    System.out.println("The Book is Out Of Stock");
                 }
             }
         }
-        System.out.println("Book not found");
         return false;
     }
 
 
-    void Rent(Book BookName, Readers Obj){
+    public void Rent(Book BookName, Readers Obj){
         if(Search(BookName.Name)){
-            RentedBooks.add(BookName.Name);
+            AddToOrderList(BookName, Obj);
         }
         else{
             System.out.println("Book not found in library");
         }
-        AddToOrderList(BookName, Obj);
     }
 
 
-    void AddToOrderList(Book Name, Readers Obj){
-        Name.ReaderNames.add(Obj);
-        Name.Quantity--;
+    public void AddToOrderList(Book Book_sent, Readers Obj){
+        Book_sent.ReaderNames.add(Obj);
+        Book_sent.Quantity--;
+        RentedBooks.add("Book Name: " + Book_sent.Name + "\nReader ID: " + Obj.ID);
     }
 }

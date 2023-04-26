@@ -3,11 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book{
-    String Name;
-    int Quantity = 0;
-    List<Readers> ReaderNames=new ArrayList<Readers>();
-    public Book(String x){
-        this.Name=x;
+    public String Name;
+    public String Author;
+    public int No_Pages;
+    public int Quantity = 0;
+    public Book(String name, String auth, int no_p){
+        this.Name=name;
+        this.Author=auth;
+        this.No_Pages = no_p;
         this.Quantity++;
     }
 }
