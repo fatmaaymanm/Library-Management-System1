@@ -3,7 +3,7 @@ package Library_System;
 public class Librarians extends Person {
     Library Account;
     static int LibrariansCounter = 0;
-    Librarians(int ID, String firstName, String lastName, String address, String password,
+    public Librarians(int ID, String firstName, String lastName, String address, String password,
                String type, int cellPhone, String email, Boolean isBlocked){
         super(ID, firstName, lastName, address, password, type, cellPhone, email, isBlocked);
         LibrariansCounter++;

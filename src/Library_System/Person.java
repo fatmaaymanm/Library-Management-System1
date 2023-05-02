@@ -26,23 +26,40 @@ public abstract class Person {
         this.isBlocked = isBlocked;
     }
 
+
+
+
     public static void registration() {
 
     }
 
     public static void login() {
-        mainMenu();
+        System.out.println("Library Management System");
+        System.out.println("Enter 1 or 2 to choose user type");
+        System.out.println("1. Librarian");
+        System.out.println("2. Reader");
+        System.out.println("3. Back to start menu");
+
+        Scanner input = new Scanner(System.in);
+        int choice = input.nextInt();
+
+        switch (choice) {
+            case 1 -> Person.loginLibrarian();
+            case 2 -> Person.loginReader();
+            case 3 -> Person.startMenu();
+            default -> {
+                System.out.println("Error!");
+                login();
+            }
+        }
     }
 
     public static void logout() {
-        clearScreen();
         startMenu();
     }
 
-    public static void clearScreen() {
-        System.out.print("\033[H\033[2J");
-        System.out.flush();
-    }
+
+
 
     public static void startMenu() {
         System.out.println("Library Management System");
@@ -71,6 +88,7 @@ public abstract class Person {
         System.out.println("1. Logout");
         System.out.println("2. Register");
 
+
         Scanner input = new Scanner(System.in);
         int choice = input.nextInt();
 
@@ -83,5 +101,74 @@ public abstract class Person {
             }
         }
     }
+
+    public static boolean searchUserLib(int id, String password) {
+        ArrayLists.addElementsDemo();
+        boolean flag = false;
+        for (int i = 0; i < ArrayLists.list1.size(); i++) {
+            if ((ArrayLists.list1.get(i).ID) == id && (ArrayLists.list1.get(i).password).compareTo(password) == 0) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    public static void loginLibrarian() {
+        ArrayLists.addElementsDemo();
+        System.out.println("Library Management System");
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter User ID:" );
+        int id = input.nextInt();
+        System.out.print("Enter Password:" );
+        String password = input.next();
+
+        for (int i = 0; i < ArrayLists.list1.size() ; i++) {
+            if (searchUserLib(id, password)) {
+                mainMenu();
+            } else {
+                System.out.println("ID or password is incorrect. Try Again!");
+                loginLibrarian();
+            }
+        }
+    }
+
+    public static boolean searchUserRea(int id, String password) {
+        ArrayLists.addElementsDemo();
+        boolean flag = false;
+        for (int i = 0; i < ArrayLists.list2.size(); i++) {
+            if ((ArrayLists.list2.get(i).ID) == id && (ArrayLists.list2.get(i).password).compareTo(password) == 0) {
+                flag = true;
+                break;
+            }
+        }
+        return flag;
+    }
+
+    public static void loginReader() {
+        ArrayLists.addElementsDemo();
+        System.out.println("Library Management System");
+        Scanner input = new Scanner(System.in);
+
+        System.out.print("Enter User ID:" );
+        int id = input.nextInt();
+        System.out.print("Enter Password:" );
+        String password = input.next();
+
+        for (int i = 0; i < ArrayLists.list2.size() ; i++) {
+            if (searchUserRea(id, password)) {
+                mainMenu();
+            } else {
+                System.out.println("ID or password is incorrect. Try Again!");
+                loginReader();
+            }
+        }
+    }
+
+
+
+
+
 }
 
