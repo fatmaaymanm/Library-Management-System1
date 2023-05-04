@@ -30,6 +30,28 @@ public abstract class Person {
 
 
     public static void registration() {
+        System.out.println("Library Management System");
+        System.out.println("Registration");
+        Scanner input = new Scanner(System.in);
+        System.out.print("ID: ");
+        int id = input.nextInt();
+        System.out.print("First Name: ");
+        String firstName = input.next();
+        System.out.print("Last Name: ");
+        String lastName = input.next();
+        System.out.print("Address: ");
+        String address = input.next();
+        System.out.print("Password: ");
+        String password = input.next();
+        System.out.print("Cellphone: ");
+        int cellphone = input.nextInt();
+        System.out.print("Email: ");
+        String email = input.next();
+        Readers reader = new Readers(id, firstName, lastName, address, password,
+                "reader", cellphone, email, true);
+        ArrayLists.list2.add(reader);
+        System.out.println(ArrayLists.list2.size());
+        System.out.println(ArrayLists.list2.toString());
 
     }
 
@@ -73,7 +95,10 @@ public abstract class Person {
 
         switch (choice) {
             case 1 -> Person.login();
-            case 2 -> Person.registration();
+            case 2 -> {
+                Person.registration();
+                startMenu();
+            }
             case 3 -> System.exit(0);
             default -> {
                 System.out.println("Error!");
@@ -94,7 +119,10 @@ public abstract class Person {
 
         switch (choice) {
             case 1 -> Person.logout();
-            case 2 -> Person.registration();
+            case 2 -> {
+                Person.registration();
+                mainMenu();
+            }
             default -> {
                 System.out.println("Error!");
                 mainMenu();
