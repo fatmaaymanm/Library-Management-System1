@@ -161,7 +161,6 @@ public abstract class Person {
     }
 
     public static boolean searchUserRea(int id, String password) {
-        ArrayLists.addElementsDemo();
         boolean flag = false;
         for (int i = 0; i < ArrayLists.list2.size(); i++) {
             if ((ArrayLists.list2.get(i).ID) == id && (ArrayLists.list2.get(i).password).compareTo(password) == 0) {
@@ -173,7 +172,6 @@ public abstract class Person {
     }
 
     public static void loginReader() {
-        ArrayLists.addElementsDemo();
         System.out.println("Library Management System");
         Scanner input = new Scanner(System.in);
 
