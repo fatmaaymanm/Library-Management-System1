@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.readerController">
+   <children>
+      <VBox fx:id="vbox" alignment="CENTER" layoutX="-17.0" layoutY="15.0" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
+         <children>
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewBooks" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Library Books">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="BOOKMARK" text="" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Search">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="SEARCH" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrderList" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="View My OrderList">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="LIST" />
+               </graphic>
+            </Button>
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Logout">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="18.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView glyphName="TIMES_CIRCLE" />
+               </graphic>
+               <VBox.margin>
+                  <Insets top="70.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <opaqueInsets>
+            <Insets right="100.0" top="100.0" />
+         </opaqueInsets>
+      </VBox>
+      <Text layoutX="370.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Library">
+         <font>
+            <Font name="GothicE" size="24.0" />
+         </font>
+      </Text>
+      <ListView fx:id="listView" layoutX="305.0" layoutY="51.0" prefHeight="325.0" prefWidth="402.0" />
+   </children>
+</AnchorPane>
