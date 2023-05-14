@@ -27,21 +27,22 @@
    <right>
       <AnchorPane prefHeight="500.0" prefWidth="370.0" style="-fx-background-color: white;" BorderPane.alignment="CENTER">
          <children>
-            <TextField onMouseClicked="#reset" fx:id="email" layoutX="120.0" layoutY="192.0" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <TextField fx:id="email" layoutX="120.0" layoutY="192.0" onMouseClicked="#reset" promptText="Email" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <FontAwesomeIconView fill="#0598ff" glyphName="USER" layoutX="95.0" layoutY="211.0" text="" />
             <FontAwesomeIconView fill="#0598ff" glyphName="KEY" layoutX="93.0" layoutY="269.0" text="" />
             <Button fx:id="loginbtn" layoutX="141.0" layoutY="339.0" mnemonicParsing="false" onAction="#submit" prefHeight="29.0" prefWidth="86.0" style="-fx-background-color: #0589ff; -fx-cursor: hand;" text="Login" textFill="WHITE" />
-            <Hyperlink onMouseClicked="#createAcc" layoutX="133.0" layoutY="462.0" text="Create New Account?" />
+            <Hyperlink layoutX="133.0" layoutY="462.0" onMouseClicked="#createAcc" text="Create New Account?" />
             <FontAwesomeIconView fill="#0598ff" glyphName="USERS" layoutX="165.0" layoutY="122.0" size="35" />
             <Text fill="#0598ff" layoutX="132.0" layoutY="151.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User Login">
                <font>
                   <Font size="22.0" />
                </font>
             </Text>
-            <PasswordField onMouseClicked="#reset" fx:id="pass" layoutX="120.0" layoutY="250.0" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
+            <PasswordField fx:id="pass" layoutX="120.0" layoutY="250.0" onMouseClicked="#reset" promptText="Password" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 0px 0px 2px 0px;" />
             <RadioButton fx:id="radio1" layoutX="111.0" layoutY="292.0" mnemonicParsing="false" onAction="#rad1" text="Reader" textFill="#130000" />
             <RadioButton fx:id="radio2" layoutX="202.0" layoutY="292.0" mnemonicParsing="false" onAction="#rad2" text="Librarian" />
             <Text fx:id="validate" fill="RED" layoutX="114.0" layoutY="169.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="140.09828567504883" />
+            <Text fx:id="successmsg" fill="#1dc214" layoutX="114.0" layoutY="168.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="140.09828567504883" />
             <Text fx:id="radcheck" fill="RED" layoutX="117.0" layoutY="327.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="133.42004776000977" />
          </children>
       </AnchorPane>

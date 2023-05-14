@@ -31,6 +31,8 @@ public class LoginController {
     PasswordField pass;
     @FXML
     Button loginbtn;
+    @FXML
+    Text successmsg;
     public LoginController() throws IOException {
     }
 
@@ -74,6 +76,7 @@ public class LoginController {
                     return;
                 }
             }
+            successmsg.setText("");
             validate.setText("Wrong Email or Password");
         }
         else if(radio2.isSelected()){
@@ -88,6 +91,7 @@ public class LoginController {
                     return;
                 }
             }
+            successmsg.setText("");
             validate.setText("Wrong Email or Password");
         }
         else {
@@ -107,7 +111,7 @@ public class LoginController {
     }
     public void initialize(){
         if (validate != null && !msg.equals("")){
-            validate.setText(msg);
+            successmsg.setText(msg);
         }
     }
 }

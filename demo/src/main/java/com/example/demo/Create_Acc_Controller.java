@@ -53,7 +53,7 @@ public class Create_Acc_Controller {
     boolean checkfirstname(){
         for (int i = 0; i < firstname.getText().length(); i++) {
             char ch = firstname.getText().charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')) {
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch == ' ')) {
                 firsterror.setText("Name Can only contain letters");
                 return false;
             }
@@ -68,7 +68,7 @@ public class Create_Acc_Controller {
     boolean checklastname(){
         for (int i = 0; i < lastname.getText().length(); i++) {
             char ch = lastname.getText().charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')) {
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch == ' ')) {
                 seconderror.setText("Name Can only contain letters");
                 return false;
             }
@@ -83,7 +83,7 @@ public class Create_Acc_Controller {
     boolean checkaddress(){
         for (int i = 0; i < address.getText().length(); i++) {
             char ch = address.getText().charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z')) {
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch == ' ')) {
                 addresserror.setText("Address Can only contain letters");
                 return false;
             }
@@ -134,7 +134,7 @@ public class Create_Acc_Controller {
             int ID = rand.nextInt(10000);
             ArrayLists.list2.add(new Readers(ID, firstname.getText(), lastname.getText(), address.getText(),
                     password.getText(), mobile.getText(), email.getText()));
-            LoginController.msg = "Welcome " + firstname.getText() + " " + lastname.getText();
+            LoginController.msg = firstname.getText() + "\'s Account is Created";
             Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
             Scene homeScene = new Scene(root, Color.TRANSPARENT);
             Stage window = (Stage)(createbtn.getScene().getWindow());
