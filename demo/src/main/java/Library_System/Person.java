@@ -8,21 +8,19 @@ public abstract class Person {
     public String lastName;
     public String address;
     public String password;
-    public String type;
-    public int cellPhone;
+    public String cellPhone;
     public String Email;
     public Boolean isBlocked;
+    public Boolean isLoggedin = false;
 
-    public Person(int ID, String firstName, String lastName, String address, String password, String type, int cellPhone, String email, Boolean isBlocked) {
+    public Person(int ID, String firstName, String lastName, String address, String password, String cellPhone, String email) {
         this.ID = ID;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.password = password;
-        this.type = type;
         this.cellPhone = cellPhone;
         this.Email = email;
-        this.isBlocked = isBlocked;
     }
 
     public static void registration() {

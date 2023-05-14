@@ -22,13 +22,11 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Readers.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("Login.fxml"));
             Scene scene = new Scene(fxmlLoader.load());
             stage.setTitle("Library");
             stage.setScene(scene);
-            stage.setOnShowing(e -> {
-
-            });
+            stage.setResizable(false);
             stage.show();
         }
         catch (Exception e){

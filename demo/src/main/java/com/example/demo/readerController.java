@@ -5,24 +5,37 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Group;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.*;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 
+import java.io.IOException;
+import java.nio.file.attribute.UserPrincipal;
 import java.util.*;
 
 
 public class readerController {
+    Readers User;
     List<HBoxCell> list = new ArrayList<>();
-    List<HBoxCell> list2 = new ArrayList<>();
+    static List<HBoxCell> list2 = new ArrayList<>();
     HBoxCell x = new HBoxCell(" Book Name", "");
     @FXML
     ListView<HBoxCell> listView;
     @FXML
     Text readerName;
-
+    @FXML
+    Button logoutbtn;
+    public void initialize(){
+        User = ArrayLists.getLoggedin();
+    }
     public class HBoxCell extends HBox {
         HBoxCell(String labelText, String buttonText) {
             super();
@@ -43,15 +56,15 @@ public class readerController {
                 this.getChildren().addAll(label, button);
                 if(buttonText.equals("Rent")) {
                     button.setOnAction(e -> {
-                        Book x = new Library().Search(labelText);
-                        ArrayLists.list2.get(0).AddToOrderList(x);
-                        x.Quantity--;
+                        Book x = User.Account.Search(labelText);
+                        User.AddToOrderList(x);
+                        User.Account.Rent(x.Name, ArrayLists.list2.get(0));
+                        x.Quantity ++;
                     });
                 }
                 else if(buttonText.equals("Delete")){
                     button.setOnAction(e -> {
-                        ArrayLists.list2.get(0).removeFromOrderList(labelText);
-                        System.out.println(list2);
+                        User.removeFromOrderList(labelText);
                         refreshList();
                     });
                 }
@@ -67,8 +80,8 @@ public class readerController {
         if (list.size() == 0) {
             list.add(new HBoxCell(" Book Name", ""));
             list.get(0).setStyle("-fx-background-color: #0598ff");
-            for (int i = 0; i < new Library().Books.size(); i++) {
-                list.add(new HBoxCell(new Library().Books.get(i).Name, "Rent"));
+            for (int i = 0; i < User.Account.Books.size(); i++) {
+                list.add(new HBoxCell(User.Account.Books.get(i).Name, "Rent"));
             }
             ObservableList<HBoxCell> myObservableList = FXCollections.observableList(list);
             listView.setItems(myObservableList);
@@ -93,10 +106,9 @@ public class readerController {
             list2.clear();
             list2.add(x);
             list2.get(0).setStyle("-fx-background-color: #0598ff");
-            ArrayLists.addElementsDemo();
-            HBoxCell[] arr = new HBoxCell[ArrayLists.list2.get(0).OrderList.size()];
-            for (int i = 0; i < ArrayLists.list2.get(0).OrderList.size(); i++) {
-                arr[i] = new HBoxCell(ArrayLists.list2.get(0).OrderList.get(i), "Delete");
+            HBoxCell[] arr = new HBoxCell[User.OrderList.size()];
+            for (int i = 0; i < User.OrderList.size(); i++) {
+                arr[i] = new HBoxCell(User.OrderList.get(i), "Delete");
             }
             for (HBoxCell hBoxCell : arr) {
                 if (!list2.contains(hBoxCell)) {
@@ -106,5 +118,14 @@ public class readerController {
             ObservableList<HBoxCell> myObservableList2 = FXCollections.observableList(list2);
             listView.setItems(myObservableList2);
         }
+    }
+    public void logout() throws IOException {
+        User.isLoggedin = false;
+        LoginController.msg = "";
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Scene homeScene = new Scene(root, Color.TRANSPARENT);
+        Stage window = (Stage) (logoutbtn.getScene().getWindow());
+        window.setScene(homeScene);
+        window.show();
     }
 }

@@ -38,7 +38,7 @@
                   <FontAwesomeIconView glyphName="LIST" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Logout">
+            <Button fx:id="logoutbtn" onAction="#logout" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Logout">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>

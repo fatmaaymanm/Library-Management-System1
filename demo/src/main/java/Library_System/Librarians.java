@@ -4,8 +4,8 @@ public class Librarians extends Person {
     public Library Account = new Library();
     public static int LibrariansCounter = 0;
     public Librarians(int ID, String firstName, String lastName, String address, String password,
-               String type, int cellPhone, String email, Boolean isBlocked){
-        super(ID, firstName, lastName, address, password, type, cellPhone, email, isBlocked);
+                      String type, String cellPhone, String email,Boolean isBlocked){
+        super(ID, firstName, lastName, address, password, cellPhone, email);
         LibrariansCounter++;
     }
     public void addBook(String book_name,String auth , int no_p){
