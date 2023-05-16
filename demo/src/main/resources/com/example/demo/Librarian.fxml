@@ -5,7 +5,9 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -14,7 +16,7 @@
    <children>
       <VBox alignment="CENTER" layoutX="-17.0" layoutY="15.0" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
          <children>
-            <Button alignment="BASELINE_LEFT" onAction="#viewBooks" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Library Books">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewBooks" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Library Books">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -22,7 +24,7 @@
                   <FontAwesomeIconView glyphName="BOOKMARK" text="" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Search">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -30,7 +32,7 @@
                   <FontAwesomeIconView glyphName="SEARCH" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="View Readers">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Readers">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -38,7 +40,7 @@
                   <FontAwesomeIconView glyphName="EYE" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="View Reader's OrderList">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Reader's OrderList">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -46,7 +48,7 @@
                   <FontAwesomeIconView glyphName="LIST" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Logout">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Logout">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -71,5 +73,12 @@
          </font>
       </Text>
       <ListView fx:id="listView" layoutX="277.0" layoutY="61.0" prefHeight="336.0" prefWidth="341.0" />
+      <TextField alignment="CENTER" layoutX="277.0" layoutY="60.0" prefHeight="30.0" prefWidth="263.0" promptText="Search Here" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 0px 2px 2px;" />
+      <Button layoutX="531.0" layoutY="60.0" mnemonicParsing="false" prefHeight="29.5" prefWidth="88.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" textFill="#bc8686">
+         <graphic>
+            <FontAwesomeIconView glyphName="SEARCH" text="" wrappingWidth="10.342808723449707" />
+         </graphic>
+      </Button>
+      <HBox layoutX="276.0" layoutY="90.0" prefHeight="306.0" prefWidth="342.0" />
    </children>
 </AnchorPane>
