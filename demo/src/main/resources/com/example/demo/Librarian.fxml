@@ -7,7 +7,6 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
@@ -24,7 +23,7 @@
                   <FontAwesomeIconView glyphName="BOOKMARK" text="" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#search" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -40,7 +39,7 @@
                   <FontAwesomeIconView glyphName="EYE" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Reader's OrderList">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#readerOrderlist" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Reader's OrderList">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -48,7 +47,7 @@
                   <FontAwesomeIconView glyphName="LIST" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Logout">
+            <Button fx:id="logoutbtn" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Logout">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -72,13 +71,14 @@
             <Font name="GothicE" size="24.0" />
          </font>
       </Text>
-      <ListView fx:id="listView" layoutX="277.0" layoutY="61.0" prefHeight="336.0" prefWidth="341.0" />
-      <TextField alignment="CENTER" layoutX="277.0" layoutY="60.0" prefHeight="30.0" prefWidth="263.0" promptText="Search Here" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 0px 2px 2px;" />
-      <Button layoutX="531.0" layoutY="60.0" mnemonicParsing="false" prefHeight="29.5" prefWidth="88.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" textFill="#bc8686">
-         <graphic>
-            <FontAwesomeIconView glyphName="SEARCH" text="" wrappingWidth="10.342808723449707" />
-         </graphic>
+      <ListView fx:id="listView" layoutX="276.0" layoutY="68.0" prefHeight="336.0" prefWidth="341.0" />
+      <TextField fx:id="search1" alignment="CENTER" layoutX="276.0" layoutY="67.0" prefHeight="30.0" prefWidth="263.0" promptText="Search Here" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 0px 2px 2px;" />
+      <Button fx:id="search2" layoutX="530.0" layoutY="67.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
       </Button>
-      <HBox layoutX="276.0" layoutY="90.0" prefHeight="306.0" prefWidth="342.0" />
+      <ListView fx:id="search3" layoutX="276.0" layoutY="97.0" prefHeight="308.0" prefWidth="341.0" />
+      <Text fx:id="error" fill="RED" layoutX="367.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
    </children>
 </AnchorPane>

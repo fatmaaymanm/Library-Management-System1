@@ -33,6 +33,7 @@ public class Library {
 
     private void AddToOrderList(Book Book_sent, Readers Obj){
         Book_sent.Quantity--;
+        Book_sent.readersID.add(Obj.ID);
         RentedBooks.add(Book_sent.Name + "," + Obj.ID);
     }
 }

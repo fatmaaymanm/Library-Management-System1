@@ -55,4 +55,13 @@ public class ArrayLists {
         }
         return null;
     }
+    public static Librarians getLoggedinlib(){
+        ArrayLists.addElementsDemo();
+        for (Librarians x:ArrayLists.list1){
+            if (x.isLoggedin){
+                return x;
+            }
+        }
+        return null;
+    }
 }

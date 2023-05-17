@@ -58,7 +58,7 @@ public class readerController {
                     button.setOnAction(e -> {
                         Book x = User.Account.Search(labelText);
                         User.AddToOrderList(x);
-                        User.Account.Rent(x.Name, ArrayLists.list2.get(0));
+                        User.Account.Rent(x.Name, User);
                         x.Quantity ++;
                     });
                 }
@@ -88,8 +88,8 @@ public class readerController {
         }
         else{
             list.get(0).setStyle("-fx-background-color: #0598ff");
-            ObservableList<HBoxCell> myObservableList = FXCollections.observableList(list);
-            listView.setItems(myObservableList);
+            ObservableList<HBoxCell> myObservableList1 = FXCollections.observableList(list);
+            listView.setItems(myObservableList1);
         }
     }
     public void viewOrderList(ActionEvent ex) {
@@ -99,21 +99,15 @@ public class readerController {
         if (list2.isEmpty()) {
             list2.add(x);
             list2.get(0).setStyle("-fx-background-color: #0598ff");
-            ObservableList<HBoxCell> myObservableList2 = FXCollections.observableList(list2);
-            listView.setItems(myObservableList2);
+            ObservableList<HBoxCell> myObservableList3 = FXCollections.observableList(list2);
+            listView.setItems(myObservableList3);
         }
         else{
             list2.clear();
             list2.add(x);
             list2.get(0).setStyle("-fx-background-color: #0598ff");
-            HBoxCell[] arr = new HBoxCell[User.OrderList.size()];
             for (int i = 0; i < User.OrderList.size(); i++) {
-                arr[i] = new HBoxCell(User.OrderList.get(i), "Delete");
-            }
-            for (HBoxCell hBoxCell : arr) {
-                if (!list2.contains(hBoxCell)) {
-                    list2.add(hBoxCell);
-                }
+                list2.add(new HBoxCell(User.OrderList.get(i), "Delete"));
             }
             ObservableList<HBoxCell> myObservableList2 = FXCollections.observableList(list2);
             listView.setItems(myObservableList2);
