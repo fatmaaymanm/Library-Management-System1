@@ -80,5 +80,25 @@
       </Button>
       <ListView fx:id="search3" layoutX="276.0" layoutY="97.0" prefHeight="308.0" prefWidth="341.0" />
       <Text fx:id="error" fill="RED" layoutX="367.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
+      <AnchorPane fx:id="add1" layoutX="275.0" layoutY="97.0" prefHeight="308.0" prefWidth="342.0">
+         <children>
+            <Text fx:id="add2" layoutX="128.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Reader">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="add3" layoutX="96.0" layoutY="40.0" promptText="Enter ID" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
+            <Text fx:id="add4" layoutX="71.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="add5" layoutX="141.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #0589FF;" text="ADD+" textFill="#f2f2f2">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="12.0" />
+               </font>
+            </Button>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>
