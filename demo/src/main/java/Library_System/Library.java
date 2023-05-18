@@ -25,9 +25,6 @@ public class Library {
         if(Search(BookName) != null){
             AddToOrderList(Search(BookName), Obj);
         }
-        else{
-            System.out.println("Book not found in library");
-        }
     }
 
 
@@ -35,5 +32,12 @@ public class Library {
         Book_sent.Quantity--;
         Book_sent.readersID.add(Obj.ID);
         RentedBooks.add(Book_sent.Name + "," + Obj.ID);
+    }
+    public void removeBook(String x){
+        for (int i=0; i<Books.size(); i++){
+            if (Books.get(i).Name.equals(x)){
+                Books.remove(i);
+            }
+        }
     }
 }

@@ -83,7 +83,7 @@ public class Create_Acc_Controller {
     boolean checkaddress(){
         for (int i = 0; i < address.getText().length(); i++) {
             char ch = address.getText().charAt(i);
-            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch == ' ')) {
+            if (!(ch >= 'a' && ch <= 'z' || ch >= 'A' && ch <= 'Z' || ch == ' ' || ch >= '0' && ch <= '9' || ch == ',')) {
                 addresserror.setText("Address Can only contain letters");
                 return false;
             }

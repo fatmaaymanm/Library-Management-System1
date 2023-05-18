@@ -10,7 +10,7 @@ public abstract class Person {
     public String password;
     public String cellPhone;
     public String Email;
-    public Boolean isBlocked;
+    public Boolean isBlocked = false;
     public Boolean isLoggedin = false;
 
     public Person(int ID, String firstName, String lastName, String address, String password, String cellPhone, String email) {
@@ -24,7 +24,6 @@ public abstract class Person {
     }
 
     public static Readers searchReader(int id) {
-        ArrayLists.addElementsDemo();
 
         for(int i = 0; i < ArrayLists.list2.size(); ++i) {
             if ((ArrayLists.list2.get(i)).ID == id) {

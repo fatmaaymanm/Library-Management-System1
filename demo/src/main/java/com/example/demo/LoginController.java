@@ -41,7 +41,6 @@ public class LoginController {
             super();
             Label label = new Label();
             Button button;
-            ArrayLists.addElementsDemo();
             label.setText(labelText);
             label.setMaxWidth(Double.MAX_VALUE);
             if (labelText.equals(" Book Name")){
@@ -63,10 +62,13 @@ public class LoginController {
         radio2.setSelected(true);
     }
     public void submit() throws IOException {
-        ArrayLists.addElementsDemo();
         if(radio1.isSelected()) {
             for (Readers x : ArrayLists.list2) {
                 if (x.Email.toLowerCase().equals(email.getText().toLowerCase()) && x.password.equals(pass.getText())) {
+                    if (x.isBlocked == true){
+                        validate.setText("Reader is Blocked");
+                        return;
+                    }
                     x.isLoggedin = true;
                     Parent root = FXMLLoader.load(getClass().getResource("Readers.fxml"));
                     Scene homeScene = new Scene(root, Color.TRANSPARENT);

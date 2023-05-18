@@ -5,6 +5,7 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
@@ -31,7 +32,7 @@
                   <FontAwesomeIconView glyphName="SEARCH" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Readers">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewReaders" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View Readers">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -71,34 +72,78 @@
             <Font name="GothicE" size="24.0" />
          </font>
       </Text>
-      <ListView fx:id="listView" layoutX="276.0" layoutY="68.0" prefHeight="336.0" prefWidth="341.0" />
+      <ListView fx:id="listView" layoutX="276.0" layoutY="68.0" prefHeight="314.0" prefWidth="341.0" />
       <TextField fx:id="search1" alignment="CENTER" layoutX="276.0" layoutY="67.0" prefHeight="30.0" prefWidth="263.0" promptText="Search Here" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 0px 2px 2px;" />
       <Button fx:id="search2" layoutX="530.0" layoutY="67.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search" textFill="WHITE">
          <font>
             <Font name="System Bold" size="13.0" />
          </font>
       </Button>
-      <ListView fx:id="search3" layoutX="276.0" layoutY="97.0" prefHeight="308.0" prefWidth="341.0" />
+      <ListView fx:id="search3" layoutX="276.0" layoutY="97.0" prefHeight="285.0" prefWidth="341.0" />
       <Text fx:id="error" fill="RED" layoutX="367.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
-      <AnchorPane fx:id="add1" layoutX="275.0" layoutY="97.0" prefHeight="308.0" prefWidth="342.0">
+      <Text fx:id="success" fill="#1dc214" layoutX="367.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
+      <AnchorPane fx:id="add1" layoutX="321.0" layoutY="140.0" prefHeight="150.0" prefWidth="250.0" style="-fx-border-radius: 10px; -fx-border-width: 2px; -fx-border-color: #0589ff; -fx-background-color: white;" visible="false">
          <children>
-            <Text fx:id="add2" layoutX="128.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Reader">
+            <Text fx:id="add2" layoutX="84.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Reader">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="20.0" />
                </font>
             </Text>
-            <TextField fx:id="add3" layoutX="96.0" layoutY="40.0" promptText="Enter ID" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
-            <Text fx:id="add4" layoutX="71.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
+            <TextField fx:id="add3" layoutX="52.0" layoutY="57.0" promptText="Enter ID" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
+            <Text fx:id="add4" layoutX="26.0" layoutY="76.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID:">
                <font>
                   <Font name="Franklin Gothic Medium" size="14.0" />
                </font>
             </Text>
-            <Button fx:id="add5" layoutX="141.0" layoutY="83.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #0589FF;" text="ADD+" textFill="#f2f2f2">
+            <Button fx:id="add5" layoutX="97.0" layoutY="93.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #0589FF; -fx-cursor: hand;" text="ADD" textFill="#f2f2f2">
                <font>
                   <Font name="Franklin Gothic Medium Cond" size="12.0" />
                </font>
             </Button>
+            <Text fx:id="add6" fill="RED" layoutX="62.0" layoutY="137.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="130.0809669494629" />
          </children>
       </AnchorPane>
+      <AnchorPane fx:id="book" layoutX="319.0" layoutY="114.0" prefHeight="250.0" prefWidth="256.0" style="-fx-border-radius: 10px; -fx-border-width: 2px; -fx-border-color: #0589ff; -fx-background-color: white;" visible="false">
+         <children>
+            <Text layoutX="92.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="20.0" />
+               </font>
+            </Text>
+            <TextField fx:id="book1" layoutX="68.0" layoutY="61.0" promptText="Enter Book Name" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
+            <Text layoutX="23.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Name">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+            </Text>
+            <Button fx:id="book4" layoutX="182.0" layoutY="213.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="60.0" style="-fx-background-color: #0589FF; -fx-cursor: hand;" text="ADD" textFill="#f2f2f2">
+               <font>
+                  <Font name="Franklin Gothic Medium Cond" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="book2" layoutX="66.0" layoutY="107.0" promptText="Enter Author Name" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
+            <Text layoutX="19.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Author">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="book3" layoutX="66.0" layoutY="155.0" promptText="Enter Number of Pages" style="-fx-background-color: transparent; -fx-border-width: 0px 0px 2px 0px; -fx-border-color: #0589ff;" />
+            <Text layoutX="14.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pages" textAlignment="CENTER" wrappingWidth="50.0">
+               <font>
+                  <Font name="Franklin Gothic Medium" size="14.0" />
+               </font>
+            </Text>
+            <Text fx:id="val1" fill="RED" layoutX="67.0" layoutY="104.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="121.88671875" />
+            <Text fx:id="val2" fill="RED" layoutX="70.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="121.88671875" />
+            <Text fx:id="val3" fill="RED" layoutX="66.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="121.88671875" />
+         </children>
+      </AnchorPane>
+      <Button fx:id="addbook" layoutX="539.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #0589FF; -fx-cursor: hand;" text="ADD Book" textFill="#f2f2f2" visible="false">
+         <font>
+            <Font name="Franklin Gothic Medium Cond" size="12.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="rad1" layoutX="324.0" layoutY="386.0" mnemonicParsing="false" text="Search Book" visible="false" />
+      <RadioButton fx:id="rad2" layoutX="492.0" layoutY="386.0" mnemonicParsing="false" text="Search Reader" visible="false" />
    </children>
 </AnchorPane>

@@ -4,7 +4,7 @@ public class Librarians extends Person {
     public Library Account = new Library();
     public static int LibrariansCounter = 0;
     public Librarians(int ID, String firstName, String lastName, String address, String password,
-                      String type, String cellPhone, String email,Boolean isBlocked){
+                      String type, String cellPhone, String email){
         super(ID, firstName, lastName, address, password, cellPhone, email);
         LibrariansCounter++;
     }
@@ -15,7 +15,8 @@ public class Librarians extends Person {
                 return;
             }
         }
-        Account.Books.add(new Book(book_name,auth ,no_p));
+        Book temp = new Book(book_name,auth ,no_p);
+        Account.Books.add(temp);
     }
     public void removeBook(String book_name){
         for (int i=0;i<Account.Books.size();i++) {

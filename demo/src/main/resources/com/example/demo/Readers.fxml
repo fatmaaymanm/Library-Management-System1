@@ -5,16 +5,17 @@
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="407.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.readerController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="431.0" prefWidth="638.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.readerController">
    <children>
       <VBox fx:id="vbox" alignment="CENTER" layoutX="-17.0" layoutY="15.0" prefHeight="300.0" prefWidth="300.0" spacing="20.0">
          <children>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewBooks" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Library Books">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewBooks" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Library Books">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -22,7 +23,7 @@
                   <FontAwesomeIconView glyphName="BOOKMARK" text="" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Search">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#search" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -30,7 +31,7 @@
                   <FontAwesomeIconView glyphName="SEARCH" />
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrderList" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="View My OrderList">
+            <Button alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#viewOrderList" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="View My OrderList">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -38,7 +39,7 @@
                   <FontAwesomeIconView glyphName="LIST" />
                </graphic>
             </Button>
-            <Button fx:id="logoutbtn" onAction="#logout" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff;" text="Logout">
+            <Button fx:id="logoutbtn" alignment="BASELINE_LEFT" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logout" prefHeight="60.0" prefWidth="240.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Logout">
                <font>
                   <Font name="Franklin Gothic Medium" size="18.0" />
                </font>
@@ -57,11 +58,20 @@
             <Insets right="100.0" top="100.0" />
          </opaqueInsets>
       </VBox>
-      <Text layoutX="370.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Library">
+      <Text layoutX="316.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome To Library">
          <font>
             <Font name="GothicE" size="24.0" />
          </font>
       </Text>
-      <ListView fx:id="listView" layoutX="305.0" layoutY="51.0" prefHeight="325.0" prefWidth="402.0" />
+      <ListView fx:id="listView" layoutX="281.0" layoutY="70.0" prefHeight="314.0" prefWidth="341.0" />
+      <TextField fx:id="search1" alignment="CENTER" layoutX="281.0" layoutY="70.0" prefHeight="30.0" prefWidth="263.0" promptText="Search Here" style="-fx-background-color: transparent; -fx-border-color: #0598ff; -fx-border-width: 2px 0px 2px 2px;" />
+      <Button fx:id="search2" layoutX="535.0" layoutY="70.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="88.0" style="-fx-background-color: #0598ff; -fx-cursor: hand;" text="Search" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Button>
+      <ListView fx:id="search3" layoutX="281.0" layoutY="100.0" prefHeight="285.0" prefWidth="341.0" />
+      <Text fx:id="error" fill="RED" layoutX="372.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
+      <Text fx:id="success" fill="#1dc214" layoutX="372.0" layoutY="62.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="161.80263137817383" />
    </children>
 </AnchorPane>

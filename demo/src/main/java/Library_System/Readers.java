@@ -15,7 +15,14 @@ public class Readers extends Person {
         OrderList.add(book_sent.Name);
         book_sent.Quantity--;
     }
-
+    public boolean checkBookOrderList(String book){
+        for (int i=0; i<this.OrderList.size(); i++){
+            if (this.OrderList.get(i).equals(book)){
+                return true;
+            }
+        }
+        return false;
+    }
     public void removeFromOrderList(String x) {
         for (int i = 0; i < OrderList.size(); i++)
             if (OrderList.get(i).equals(x)){
