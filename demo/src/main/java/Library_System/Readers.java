@@ -23,6 +23,14 @@ public class Readers extends Person {
         }
         return false;
     }
+    public Readers getReader(int ID){
+        for (Readers x: ArrayLists.list2){
+            if (x.ID == ID){
+                return x;
+            }
+        }
+        return null;
+    }
     public void removeFromOrderList(String x) {
         for (int i = 0; i < OrderList.size(); i++)
             if (OrderList.get(i).equals(x)){

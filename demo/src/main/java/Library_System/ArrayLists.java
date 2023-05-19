@@ -29,6 +29,10 @@ public class ArrayLists {
         l1.addBook("Blue Elephant2", "Omar", 513);
         l1.addBook("Blue Elephant3", "Barakat", 560);
         l1.addBook("Blue Elephant4", "John", 513);
+        l1.addBook("Harry Potter1", "Tsneam", 436);
+        l1.addBook("Harry Potter2", "Fatma", 730);
+        l1.addBook("Harry Potter3", "Ahmed", 464);
+        l1.addBook("Harry Potter4", "Hossam", 682);
     }
     public Readers getReader(int ID){
         for(int i=0; i<ArrayLists.list2.size();i++) {

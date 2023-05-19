@@ -235,6 +235,7 @@ public class LibrarianController {
         rad2.setSelected(false);
         rad1.setOnAction(event -> {
             rad2.setSelected(false);
+            search1.setText("");
             rad1.setSelected(true);
             error.setText("");
             list3.clear();
@@ -243,6 +244,7 @@ public class LibrarianController {
         });
         rad2.setOnAction(event -> {
             rad1.setSelected(false);
+            search1.setText("");
             rad2.setSelected(true);
             error.setText("");
             list3.clear();
@@ -251,6 +253,7 @@ public class LibrarianController {
         });
         add1.setVisible(false);
         success.setText("");
+        search1.setText("");
         val1.setText("");
         val2.setText("");
         val3.setText("");
@@ -271,7 +274,8 @@ public class LibrarianController {
                     if (search1.getText().equals("")) {
                         error.setText("Please Enter Text in Search Box");
                         break;
-                    } else if (isNumeric(search1.getText())) {
+                    }
+                    else if (isNumeric(search1.getText())) {
                         error.setText("Please Search With Book Name");
                         break;
                     } else {
@@ -280,6 +284,10 @@ public class LibrarianController {
                     if (new Library().Books.get(i).Name.toLowerCase().replaceAll(" ", "")
                             .contains(search1.getText().toLowerCase().replaceAll(" ", ""))) {
                         list3.add(new HBoxCell(new Library().Books.get(i).Name, ""));
+                        break;
+                    }
+                    else{
+                        error.setText("Book Not Found");
                     }
                 }
                 ObservableList<HBoxCell> myObservableList = FXCollections.observableList(list3);
@@ -287,22 +295,22 @@ public class LibrarianController {
             }
             else {
                 list3.clear();
-                for(int i=0; i<ArrayLists.list2.size();i++){
-                    if (search1.getText().equals("")){
-                        error.setText("Please Enter Text in Search Box");
-                        break;
-                    }
-                    else if (!isNumeric(search1.getText())) {
-                        error.setText("Please Search With Reader ID");
-                        break;
-                    }
-                    else if (ArrayLists.list2.get(i).ID == toInt(search1.getText())){
-                        list3.add(new HBoxCell(Integer.toString(ArrayLists.list2.get(i).ID), ""));
-                        error.setText("");
-                    }
-                    else{
-                        error.setText("Reader Not Found");
-                        break;
+                error.setText("");
+                if (search1.getText().equals("")){
+                    error.setText("Please Enter Text in Search Box");
+                }
+                else if (!isNumeric(search1.getText())) {
+                    error.setText("Please Search With Reader ID");
+                }
+                else {
+                    for (int i = 0; i < ArrayLists.list2.size(); i++) {
+                        if (ArrayLists.list2.get(i).ID == toInt(search1.getText())) {
+                            list3.add(new HBoxCell(Integer.toString(ArrayLists.list2.get(i).ID), ""));
+                            error.setText("");
+                            break;
+                        } else {
+                            error.setText("Reader Not Found");
+                        }
                     }
                 }
                 ObservableList<HBoxCell> myObservableList = FXCollections.observableList(list3);
@@ -362,7 +370,7 @@ public class LibrarianController {
                             add6.setText("Please Input Valid ID");
                             break;
                         }
-                        if (reader.isBlocked){
+                        else if (reader.getReader(toInt(add3.getText())).isBlocked){
                             add6.setText("Reader is Blocked");
                             break;
                         }

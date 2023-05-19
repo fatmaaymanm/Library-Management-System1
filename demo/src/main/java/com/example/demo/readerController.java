@@ -132,11 +132,11 @@ public class readerController {
         }
     }
     public void viewOrderList(ActionEvent ex) {
+        error.setText("");
         refreshList();
     }
     public void refreshList(){
         success.setText("");
-        error.setText("");
         listView.setVisible(true);
         search1.setVisible(false);
         search2.setVisible(false);
@@ -175,6 +175,7 @@ public class readerController {
         error.setText("");
         success.setText("");
         listView.setVisible(false);
+        search1.setText("");
         search1.setVisible(true);
         search2.setVisible(true);
         search3.setVisible(true);
@@ -198,6 +199,10 @@ public class readerController {
                 if (new Library().Books.get(i).Name.toLowerCase().replaceAll(" ","")
                         .contains(search1.getText().toLowerCase().replaceAll(" ",""))){
                     list3.add(new HBoxCell(new Library().Books.get(i).Name, ""));
+                    break;
+                }
+                else{
+                    error.setText("Book Not Found");
                 }
             }
             ObservableList<HBoxCell> myObservableList = FXCollections.observableList(list3);

@@ -138,7 +138,7 @@
             <Text fx:id="val3" fill="RED" layoutX="66.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="121.88671875" />
          </children>
       </AnchorPane>
-      <Button fx:id="addbook" layoutX="539.0" layoutY="351.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #0589FF; -fx-cursor: hand;" text="ADD Book" textFill="#f2f2f2" visible="false">
+      <Button fx:id="addbook" layoutX="539.0" layoutY="391.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #0589FF; -fx-cursor: hand;" text="ADD Book" textFill="#f2f2f2" visible="false">
          <font>
             <Font name="Franklin Gothic Medium Cond" size="12.0" />
          </font>

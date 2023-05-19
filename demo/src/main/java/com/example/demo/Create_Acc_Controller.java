@@ -112,11 +112,15 @@ public class Create_Acc_Controller {
             mobilerror.setText("You Must Fill The Blank");
             return false;
         }
+        else if (mobile.getText().length() > 11){
+            mobilerror.setText("Phone Number Max_Length is 11 Numbers");
+            return false;
+        }
         try {
             Double.parseDouble(mobile.getText());
 
         } catch(NumberFormatException e){
-            mobilerror.setText("Number Can only contain numbers");
+            mobilerror.setText("Number Can Only Contain Numbers");
             return false;
         }
         mobilerror.setText("");
